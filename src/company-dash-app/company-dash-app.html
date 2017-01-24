@@ -1,0 +1,93 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/grid-layout/grid-layout.html">
+<link rel="import" href="../../bower_components/dashboard-widgets/db-part-frame.html">
+<link rel="import" href="../../bower_components/dashboard-widgets/db-widget-column.html">
+
+<dom-module id="company-dash-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+        height:100%;
+      }
+
+      grid-item {
+      }
+
+      .borders {
+        border: 1px solid #555;
+        box-sizing: border-box;
+      }
+
+      #main {
+        height:100%;
+      }
+
+      /* special for company db */
+      :root{
+        --db-part-header
+        --db-part-header-header: {
+          font-family: 'Montserrat', sans-serif;
+          text-align: center;
+          color: var(--snow);
+        };
+      }
+
+    </style>
+    <grid-layout id="main" width="4" cellheight="190" style="height:100%">
+    <grid-item width="4" height="1">
+      <grid-layout width="4" style="height:100%">
+        <grid-item width="1" height="1" class="borders"><db-widget-column header="Pro Subscriptions"></db-widget-column></grid-item>
+        <grid-item width="1" height="1" class="borders"><db-part-frame header="Prime Subscriptions"></db-part-frame></grid-item>
+        <grid-item width="1" height="1" class="borders"><db-part-frame header="Training Subscriptions"></db-part-frame></grid-item>
+        <grid-item width="1" height="1" class="borders"><db-part-frame header="Total Revenue"></db-part-frame></grid-item>
+      </grid-layout>
+    </grid-item>
+    <grid-item width="4" height="3">
+      <grid-layout width="4" style="height:100%">
+        <grid-item width="1" height="3">
+          <grid-layout width="4" style="height:100%" cellheight="190">
+            <grid-item width="4" height="1" class="borders"><db-part-frame header="Pro Churn"></db-part-frame></grid-item>
+            <grid-item width="4" height="2" class="borders"><db-part-frame header="Top Projects"></db-part-frame></grid-item>
+          </grid-layout>
+        </grid-item>
+        <grid-item width="1" height="1">
+          <grid-layout width="4" style="height:100%" cellheight="190">
+            <grid-item width="4" height="1" style="line-height: 190px;"><img src="dashboard.png" alt="head" style="width:100%;vertical-align:middle"></grid-item>
+            <grid-item width="4" height="1" class="borders">Twitter</grid-item>
+            <grid-item width="4" height="1" class="borders"><db-part-frame header="Unique Visitors"></db-part-frame></grid-item>
+          </grid-layout>
+        </grid-item>
+        <grid-item width="1" height="1">
+          <grid-layout width="4" style="height:100%" cellheight="190">
+            <grid-item width="4" height="2" style="line-height: 380px;"><img src="head.png" alt="head" style="width:100%;vertical-align:middle"></grid-item>
+            <grid-item width="4" height="1" class="borders"><db-part-frame header="Sales &amp; Marketing pipeline"></db-part-frame></grid-item>
+          </grid-layout>
+        </grid-item>
+        <grid-item width="1" height="1">
+          <grid-layout width="4" style="height:100%" cellheight="190">
+            <grid-item width="4" height="1" class="borders"><db-part-frame header="Subscription bookings"></db-part-frame></grid-item>
+            <grid-item width="4" height="1" class="borders"><db-part-frame header="Service revenue"></db-part-frame></grid-item>
+            <grid-item width="4" height="1" class="borders"><db-part-frame header="Latest deals"></db-part-frame></grid-item>
+          </grid-layout>
+        </grid-item>
+      </grid-layout>
+    </grid-item>
+    </grid-layout>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'company-dash-app',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'company-dash-app',
+        },
+      },
+
+    });
+  </script>
+</dom-module>

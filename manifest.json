@@ -1,0 +1,7 @@
+{
+  "name": "company-dash",
+  "short_name": "company-dash",
+  "description": "Vaadin&#39;s own dashboard",
+  "start_url": "/",
+  "display": "standalone"
+}
